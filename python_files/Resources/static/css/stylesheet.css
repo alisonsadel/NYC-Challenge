@@ -1,45 +1,106 @@
 body {
-  text-align: center;
-  background-color: #333;;
+  /* text-align: center; */
+  background-color: #333;
+}
+
+.container{
+  border: #e0dfdc 2px solid;
+  height: 425px;
+  
 }
 
 form {
-  display: block;
-  padding: 50px;
-  border: #e0dfdc 2px solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: .5fr .5fr .5fr .5fr;
+  padding: 5px;
+  grid-gap:20px;
+  
 }
 
-/* .proptype .zip{
+#proptype:focus, #zip:focus, #bdcount:focus, #bacount:focus{
   display: block;
-} */
+  outline: 3px solid gold;
+  /* width: 100%; */
+  border: 1px solid #000;
+}
+
+#property, #proptype, #bedroom, #bdcount{
+  grid-column: 1/4;
+}
+
+#zip_code, #zip, #bathroom, #bacount{
+  grid-column: 4/7;
+}
+
+
+#property, #zip_code{
+  grid-row: 1;
+}
+
+#proptype, #zip {
+  grid-row: 2;
+  height: 50px;
+  font-size: 25px;
+  font-weight: bold;
+  color: darkblue;
+}
+
+#proptype{
+  height: 57px;
+}
+
+#bedroom, #bathroom{
+  grid-row:3;
+}
+
+#bdcount, #bacount{
+  grid-row: 4;
+  height: 50px;
+  font-size: 25px;
+  font-weight: bold;
+  color: darkblue;
+}
 
 label{
-  display: inline-block;
-  margin:0;
+  display: block;
   color:#e0dfdc;
   font-size: xxx-large;
 }
 
-input select{
-  position: relative;
-}
+/* .buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+} */
+
+/* .button_predict{
+  grid-column: 1/4;
+} */
+
+/* .button_reset{
+  grid-column: 4/7;
+} */
 
 .button_predict {
-    display: inline-block;
-    padding: 5px 60px;
-    font-size: 20px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #157ba3;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    font-weight: bold;
-  }
+  display: inline-block;
+  padding: 5px 60px;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: none;
+  color: #fff;
+  background-color: #157ba3;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-weight: bold;
+  width: 50%;
+  margin-left: 2px;
+}
   
   .button_predict:hover {
     background-color: #0662cc;
@@ -53,11 +114,12 @@ input select{
 
   .button_reset {
     display: inline-block;
-    padding: 5px 60px;
-    font-size: 20px;
+    padding: 5px 85px;
+    font-size: 30px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     outline: none;
     color: #fff;
     background-color: #770606;
@@ -66,6 +128,8 @@ input select{
     box-shadow: 0 9px #999;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
     font-weight: bold;
+    width: 49%;
+    margin-left: 5px;
   }
   
   .button_reset:hover {
@@ -120,25 +184,4 @@ input select{
       -26px 52px 1px #dfdddc, 
       -27px 54px 1px #e2e0df, 
       -28px 56px 1px #e4e3e2;
-      /* color: #e0dfdc;
-      background-color: #333;
-      letter-spacing: .1em;
-      text-shadow: 
-        0 -1px 0 #fff, 
-        0 1px 0 #2e2e2e, 
-        0 2px 0 #2c2c2c, 
-        0 3px 0 #2a2a2a, 
-        0 4px 0 #282828, 
-        0 5px 0 #262626, 
-        0 6px 0 #242424, 
-        0 7px 0 #222, 
-        0 8px 0 #202020, 
-        0 9px 0 #1e1e1e, 
-        0 10px 0 #1c1c1c, 
-        0 11px 0 #1a1a1a, 
-        0 12px 0 #181818, 
-        0 13px 0 #161616, 
-        0 14px 0 #141414, 
-        0 15px 0 #121212, 
-        0 22px 30px rgba(0, 0, 0, 0.9); */
       }
