@@ -1,0 +1,163 @@
+CREATE TABLE Crime (
+    complaint_id int Primary Key,
+    borough varchar,
+    category varchar,
+    complaint_code int,
+    complaint_desc varchar,
+    lat2 dec(4,2),
+    lat_crime dec(10,8),
+    long2 dec(4,2),
+    long_crime dec(10,8),
+    complaint_date date,
+    zipcode int,
+    categor VARCHAR,
+    category_tier int,
+    type_is_felony int,
+    type_is_misdemeanor int,
+    type_is_violation int,
+   danger_level VARCHAR,
+   danger_level_is_high Int,
+   danger_level_is_low Int
+);
+
+----------------------------------------------------------------------------------------------------
+Create Table Tree (
+	"index" int Primary Key
+	,boro_ct int
+	,borocode int
+	,borough VARCHAR
+	,health VARCHAR
+	,latitude dec(10,8)
+	,longitude dec(10,8)
+	,nta VARCHAR
+	,neighborhood VARCHAR
+	,species VARCHAR
+	,status VARCHAR
+	,tree_id Int
+	,year_planted Int
+	,zipcode Int
+	,status_tier Int
+	,status_alive dec(2,1)
+	,status_dead dec(2,1)
+	,status_stump dec(2,1)
+	,health_level Int
+	,health_level_dead dec(2,1)
+	,health_level_fair dec(2,1)
+	,health_level_good dec(2,1)
+	,health_level_poor dec(2,1)
+);
+
+--------------------------------------------------------------------------------------
+
+CREATE TABLE restaurants (
+	"Index" INT Primary Key
+	,CAMIS INT
+	,"Name" VARCHAR(100)
+	,BORO VARCHAR(100)
+	,BUILDING VARCHAR(100)
+    ,STREET VARCHAR(100)
+	,ZIPCODE INT
+);
+
+ 
+COPY restaurants
+FROM 'C:\Users\Stephen\code\Final_Project\python_files\output\restaurants.csv'
+DELIMITER ',' CSV HEADER;
+
+ --SELECT * from 
+ --restaurants
+ --order by "Index"
+
+-----------------------------------------------------------------------------------------
+
+CREATE TABLE schools (
+	"Index" INT Primary key
+	,dbn VARCHAR
+	,school_name VARCHAR(100)
+	,language_classes VARCHAR
+	,neighborhood VARCHAR
+	,primary_address_line_1 VARCHAR
+	,city VARCHAR
+	,zipcode INT
+	,shared_space VARCHAR
+	,building_code VARCHAR
+	,subway VARCHAR
+	,grades2020 VARCHAR
+	,finalgrades VARCHAR
+	,total_students INT
+	,Borough VARCHAR
+	,Latitude dec(8,6)
+	,Longitude dec(8,6)
+	,Community_Board INT
+	,Council_District INT
+	,Census_Tract INT
+	,BIN INT
+	,BBL VARCHAR
+	,NTA VARCHAR
+);
+
+COPY schools
+FROM 'C:\Users\Stephen\code\Final_Project\python_files\output\schools.csv'
+DELIMITER ',' CSV HEADER;
+
+-----------------------------------------------------------------------------------------------------
+CREATE TABLE brownfields(
+	"index" int primary key
+	,borough VARCHAR
+	,site_code VARCHAR
+	,site_name VARCHAR
+	,zipcode int
+	,status VARCHAR
+	,status_tier int
+	,type_is_active_cleanup_mild_threat int
+	,type_is_active_significant_threat int
+	,type_is_completed_clean int
+	,type_is_maintain_continued_threat int
+	,type_is_potential_threat int
+);
+
+---------------------------------------------------------------------------------------------------
+CREATE TABLE real_estate(
+	"index" int primary key
+	,address VARCHAR 
+	,building_name VARCHAR
+	,neighborhood VARCHAR
+	,borough VARCHAR
+	,Price money
+	,PPSF money
+	,rooms int
+	,bed int
+	,total_bath int
+	,bath dec(3,1)
+	,full_bath int
+	,HBa int
+	,Sq_Ft VARCHAR
+	,monthly_fees money
+	,monthly_fees_taxes money
+	,monthly_taxes money
+	,MLS_Property_Type VARCHAR
+	,MLS_Property_Subtype VARCHAR
+	,property_type VARCHAR
+	,days_on_market VARCHAR
+	,Updated_Date date
+	,listed_date date
+	,listed_price money
+	,Last_Asking money
+	,Contract_Date date
+	,sold_price money
+	,sold_date date
+	,zipcode int
+	,lat dec(6,4)
+	,long dec(6,4)
+	,Building_Size VARCHAR
+	,Lot_Size VARCHAR 
+	,Outdoor_Space VARCHAR
+	,year_built int
+	,Service_Level VARCHAR
+	,Building_Units int
+);
+
+
+COPY real_estate
+FROM 'C:\Users\Stephen\code\NYC-Challenge\python_files\output\real_estate.csv'
+DELIMITER ',' CSV HEADER;
