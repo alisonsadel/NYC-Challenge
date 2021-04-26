@@ -13,6 +13,13 @@
 
     <body>
 
+        {% for crimes in crime %}
+        <tr>
+            <td>{{crimes[0]}}</td>
+            <td>{{crimes[1]}}</td>
+        </tr>
+        {% endfor %}
+
 
         <script src="https://d3js.org/d3.v6.min.js"></script>
         <script src="https://d3js.org/d3.v5.min.js"></script>

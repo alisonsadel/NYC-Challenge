@@ -12,22 +12,23 @@
     </head>
 
     <body>
+
+        <h1 class="deepshadow">Real Estate Price Predictor</h1>
         <div class="container">
-
-            <h1 class="deepshadow">Property Price Predictor</h1>
-
-            <form action="/predict_page.py">
-                <label for="proptype">Choose a Property Type:</label>
+            <form id = "client" class = "client" action="/predict_page.py">
+                <label id=property for="proptype">Choose a Property Type</label>
                 <select id="proptype" name="proptype">
                     <option value="starter"></option>
                     <option value="condo">Condo</option>
                     <option value="coop">Coop</option>
                     <option value="townhouse">Townhouse</option>
                     <option value="house">House</option>
-                </select> <label for="zip">Zip Code</label>
+                </select> 
+                
+                <label id=zip_code for="zip">Zip Code</label>
                 <input type="text" id="zip" name="zip"><br><br>
                 
-                <label for="bdcount">Bedroom Count</label>
+                <label id = bedroom for="bdcount">Bedroom Count</label>
                 <select id="bdcount" name="bdcount">
                     <option value="starter"></option>
                     <option value="one">1</option>
@@ -42,7 +43,7 @@
                     <option value="ten">10</option>
                 </select>
 
-                <label for="bacount">Bathroom Count</label>
+                <label id = bathroom for="bacount">Bathroom Count</label>
                 <select id="bacount" name="bacount">
                     <option value="starter"></option>
                     <option value="one">1</option>
@@ -52,11 +53,15 @@
                     <option value="five">5</option>
                     <option value="six">6</option>
                 </select>
-
-                <br><br>               
-                <button class="button_predict">Predict Price</button> <button class="button_reset">Reset</button>
+                <br><br>  
             </form>
+            <div class = buttons>
+                <a href="../templates/loader.html"><button class="button_predict">Predict Price</button></a> 
+                <button class="button_reset" id="button_reset">Reset</button>
+            </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="../static/js/app.js"></script>
 
     </body>
 
