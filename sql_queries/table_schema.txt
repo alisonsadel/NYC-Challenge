@@ -72,7 +72,6 @@ DELIMITER ',' CSV HEADER;
 
 CREATE TABLE schools (
 	"Index" INT Primary key
-	,dbn VARCHAR
 	,school_name VARCHAR(100)
 	,language_classes VARCHAR
 	,neighborhood VARCHAR
@@ -91,13 +90,12 @@ CREATE TABLE schools (
 	,Community_Board INT
 	,Council_District INT
 	,Census_Tract INT
-	,BIN INT
-	,BBL VARCHAR
 	,NTA VARCHAR
 );
 
+
 COPY schools
-FROM 'C:\Users\Stephen\code\Final_Project\python_files\output\schools.csv'
+FROM 'C:\Users\Stephen\code\Final_Project\NYC-Challenge\python_files\output\schools.csv'
 DELIMITER ',' CSV HEADER;
 
 -----------------------------------------------------------------------------------------------------
@@ -120,6 +118,7 @@ CREATE TABLE brownfields(
 CREATE TABLE real_estate(
 	"index" int primary key
 	,address VARCHAR 
+	,building_name VARCHAR
 	,neighborhood VARCHAR
 	,borough VARCHAR
 	,bed int
@@ -134,7 +133,7 @@ CREATE TABLE real_estate(
 	,zipcode int
 	,lat dec(6,4)
 	,long dec(6,4)
-	,year_built date
+	,year_built int
 	,dom_ranges VARCHAR
 	,dom_tier int
 	,dom_lowerbound int	
