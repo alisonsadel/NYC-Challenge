@@ -147,3 +147,20 @@ CREATE TABLE real_estate(
 COPY real_estate
 FROM 'C:\Users\Stephen\code\NYC-Challenge\python_files\output\real_estate.csv'
 DELIMITER ',' CSV HEADER;
+
+---------------------------------------------------------------------------------------------------
+CREATE TABLE walk (
+	address VARCHAR
+	,borough VARCHAR
+	,lat dec(6,4)
+	,long dec(6,4)
+	,zipcode int
+	,nearest_station VARCHAR
+	,lat_radian dec(16,15)
+	,long_radian dec(10,9)
+	,uniqueid int primary key
+	,distance_miles dec(16,15)
+	,under_1_mile BOOLEAN
+	,walkable_false int
+	,walkable_true int
+);
